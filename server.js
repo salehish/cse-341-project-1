@@ -1,4 +1,5 @@
 const express = require('express');
+const mongodb = require('./data/database');
 const app = express();
 
 app.use((req, res, next) => {
@@ -6,13 +7,30 @@ app.use((req, res, next) => {
     next();
 });
 
+
 app.get('/', (req, res) => {
     res.send('Hello, world!');
 });
 
-const port = process.env.PORT || 3001;
-
+const port = process.env.PORT || 3006;
 app.use('/', require('./routes'));
+
+
+
+mongodb.initDb((err) => {
+    if(err) {
+        console.log(err);
+    }
+    else{
+        console.log(`Database is listening and node running on port ${port}`);
+    }
+
+});
+
+app.get('/project-1.salehish', (req, res) => {
+    res.send('This is the project page for salehish')
+})
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
