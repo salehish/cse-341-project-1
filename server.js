@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     res.send('Hello, world!');
 });
 
-const port = process.env.PORT || 3006;
+const port = process.env.PORT || 3001;
 app.use('/', require('./routes'));
 
 
