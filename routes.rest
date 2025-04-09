@@ -1,0 +1,25 @@
+GET http://localhost:3001/salehish
+
+GET http://localhost:3001/salehish/622023f642f9ab4cd6e060b3
+
+POST http://localhost:3001/salehish HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Ashley",
+    "lastName": "Weaver",
+    "email": "aWeaver@test.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
+}
+
+PUT http:/localhost:3001/salehish/6220bc39cd507e920c75a0b HTTP/1.1
+Content-type: application/json
+
+{
+    "firstName":"Sarah",
+    "lastName": "Birch",
+    "email": "test@gmail.com",
+    "favoriteColor":"Green",
+    "birthday":"12/12/20"   
+}

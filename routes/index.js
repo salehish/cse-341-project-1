@@ -6,4 +6,6 @@ router.get('/project-1.salehish', (req, res) => {res.send('This is the project p
 
 router.use('/salehish', salehishRouter);
 
+router.get('/', (req, res) => {res.('Hello World');});
+
 module.exports = router;
