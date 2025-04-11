@@ -1,0 +1,27 @@
+GET http://localhost:3001/api/contacts
+
+GET http://localhost:3001/api/contacts/INSERT_CONTACT_ID_HERE
+
+POST http://localhost:3001/api/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Saleh",
+  "lastName": "Ntege",
+  "email": "ntegesaleh@gmail.com",
+  "favoriteColor": "blue",
+  "birthday": "1995-08-14"
+}
+
+PUT http://localhost:3001/api/contacts/INSERT_CONTACT_ID_HERE
+Content-Type: application/json
+
+{
+  "firstName": "Aminah",
+  "lastName": "Nakalyowa",
+  "email": "nakalyowaaminah@gmail.com",
+  "favoriteColor": "green",
+  "birthday": "1998-04-07"
+}
+
+DELETE http://localhost:3001/api/contacts/INSERT_CONTACT_ID_HERE

@@ -1,11 +1,16 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
+const session = require('express-session');
+const salehishRoutes = require('./salehish');
+const swaggerRoutes = require('./swagger');
 
-const salehishRouter = require('./salehish');
+router.use('/salehish', salehishRoutes);
 
-router.get('/project-1.salehish', (req, res) => {res.send('This is the project page for salehish.')});
-
-router.use('/salehish', salehishRouter);
-
-router.get('/', (req, res) => {res.('Hello World');});
+router.use('/',require('./swagger'));
+router.use('/api-docs', swaggerRoutes);
+router.get('/', (req, res) => {
+   //#swagger.tag=[salehish]
+//res.send('Hello World');
+});
 
 module.exports = router;
