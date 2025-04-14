@@ -28,7 +28,6 @@ const getsSingle = async (req, res) => {
 };
 
 const createsalehish = async (req, res) => {
-    //#swagger.tag=[salehish]
   const salehish = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -46,7 +45,6 @@ const createsalehish = async (req, res) => {
 };
 
 const updatesalehish = async (req, res) => {
-    //#swagger.tag=[salehish]
   const salehishid = new ObjectId(req.params.id);
   const salehish = {
     firstName: req.body.firstName,

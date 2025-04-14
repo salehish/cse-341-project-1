@@ -8,7 +8,7 @@ const {
   deletesalehish,
   getAllContacts,
   getContactbyId
-} = require('../controller/salehish');
+} = require('../controllers/salehish');
 
 
 router.get('/', getAll); 
