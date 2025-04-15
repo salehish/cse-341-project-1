@@ -1,21 +1,20 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('passport');
+
 const userRoutes = require('./routes/users');
 const productRoutes = require('./routes/products');
 const { swaggerUi, swaggerSpec } = require('./swagger/swaggerConfig');
-const session = require('express-session')
-const swaggerJsdoc = require('swagger-jsdoc')
-const swaggerUi = require('swagger-ui-express')
 
 const app = express();
-app.use(express.json());
-
 
 app.use(express.json());
 app.use(session({ secret: 'your-secret-key', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 
